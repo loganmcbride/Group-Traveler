@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+const helper = require('./apihelper.js');
 
 
 app.use(express.static(__dirname + '/../client/dist'))
@@ -9,9 +10,12 @@ app.use(express.static(__dirname + '/../client/dist'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// app.get('/', function(req, res){
-//   res.send(path.join(__dirname, '../client/index.html'));
-// })
+app.post('/ideas', function(req, res){
+  console.log("REQ.BODY.CITY : ",req.body.resultsNum)
+  helper.getIdeas(req.body.city, req.body.resultsNum, function(data){
+    res.send(data);
+  })
+})
 
 
 
