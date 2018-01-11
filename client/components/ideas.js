@@ -48,8 +48,8 @@ class Ideas extends React.Component {
   render(){
     if (this.state.flag === false){
       return(
-        <div>
-          <h6>Create a New Trip</h6>
+        <div className="container">
+          <h5>Create a New Trip!</h5>
           <form onSubmit={this.nameSubmit}>
             <input value={this.state.name} onChange={this.handleName} placeholder="Enter a trip name">
             </input>
@@ -59,13 +59,14 @@ class Ideas extends React.Component {
       )
     } else {
       return(
-        <div>
+        <div className="container">
           <h7>{this.state.name}</h7>
           <form onSubmit={this.handleSubmit}>
             <input value={this.state.city} onChange={this.handleChange} placeholder="Enter a city">
             </input>
-            <button onClick={this.handleSubmit} className="btn btn-outline-success">Search</button>
+            <button onClick={this.handleSubmit} className="btn-dark btn-outline-success">Search</button>
           </form>
+          <p></p>
           <div>
           {this.state.ideas.map((idea, i) => <IdeaItem idea={idea} key={i} /> )}
           </div>

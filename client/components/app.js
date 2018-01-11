@@ -20,11 +20,10 @@ class App extends React.Component {
         <div>
           <div>
             <nav className="navbar collapse navbar-collapse navbar-light bg-light">
-              <div>
-                <h7 className="navbar-brand">Group Travel Ideas</h7>
-                <ul className="navbar-nav mr-auto">
+              <div className="navbar-brand">
+                <ul className="navbar-nav">
                   <li className="nav-item active">
-                    <div className="nav-link"><Link to='/'>Ideas</Link></div>
+                    <div className="nav-link"><Link to='/'>New Trip</Link></div>
                   </li>
                   <li className="nav-item">
                     <div className="nav-link"><Link to='/itinerary'>Itinerary</Link></div>

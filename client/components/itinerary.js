@@ -8,8 +8,8 @@ class Itinerary extends React.Component {
 
   render(){
     return(
-      <div>
-        <h7>Itinerary Page</h7>
+      <div className="container">
+        <h5>{this.props.name}</h5>
       </div>
     )
   }
