@@ -18,16 +18,16 @@ class App extends React.Component {
     return(
       <Router>
         <div>
-          <h2>Group Travel Ideas</h2>
           <div>
-            <nav>
+            <nav className="navbar collapse navbar-collapse navbar-light bg-light">
               <div>
-                <ul>
-                  <li>
-                    <div><Link to='/'>Ideas</Link></div>
+                <h7 className="navbar-brand">Group Travel Ideas</h7>
+                <ul className="navbar-nav mr-auto">
+                  <li className="nav-item active">
+                    <div className="nav-link"><Link to='/'>Ideas</Link></div>
                   </li>
-                  <li>
-                    <div><Link to='/itinerary'>Itinerary</Link></div>
+                  <li className="nav-item">
+                    <div className="nav-link"><Link to='/itinerary'>Itinerary</Link></div>
                   </li>
                 </ul>
               </div>

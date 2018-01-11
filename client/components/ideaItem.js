@@ -8,7 +8,12 @@ class IdeaItem extends React.Component {
 
   render(){
     return(
-      <div><h9>{this.props.title}</h9></div>
+      <div>
+        <button className="btn btn-outline-success">
+          <div><img src={this.props.idea.main_image} /></div>
+          <a>{this.props.idea.title}</a>
+        </button>
+      </div>
     )
   }
 
