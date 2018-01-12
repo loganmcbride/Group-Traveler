@@ -1,9 +1,9 @@
-var mysql = require('mysql');
-var config = require('./config.js');
-var con = mysql.createConnection(config);
+const mysql = require('mysql');
+const config = require('./config.js');
+const con = mysql.createConnection(config);
 
-getItinerary(){
-  con.query()
+const getItinerary = function(cb){
+  con.query('SELECT * FROM ideas WHERE ', cb)
 }
 
 module.exports = {

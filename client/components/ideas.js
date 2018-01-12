@@ -7,7 +7,6 @@ class Ideas extends React.Component {
     super(props)
     this.state = {
       city: '',
-      resultsNum: '25',
       ideas: [],
       name: '',
       flag: false
@@ -68,7 +67,7 @@ class Ideas extends React.Component {
           </form>
           <p></p>
           <div>
-          {this.state.ideas.map((idea, i) => <IdeaItem idea={idea} key={i} /> )}
+          {this.state.ideas.map((idea, i) => <IdeaItem idea={idea} key={i} name={this.state.name}/> )}
           </div>
         </div>
       )
