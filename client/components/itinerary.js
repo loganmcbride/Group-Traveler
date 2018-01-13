@@ -14,7 +14,7 @@ class Itinerary extends React.Component {
   }
 
   getIdeas(name){
-    axios.get('/ideas', {name: name})
+    axios.post('/itinerary', this.state)
     .then((response) => {
       console.log('this is /ideas response :', response);
       this.setState({ideas: response})
@@ -22,7 +22,7 @@ class Itinerary extends React.Component {
   }
 
   nameSubmit(e){
-    getIdeas(this.state.name);
+    this.getIdeas(this.state.name);
     e.preventDefault();
   }
 

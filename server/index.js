@@ -17,15 +17,18 @@ app.post('/ideas', function(req, res){
   })
 })
 
-app.get('/ideas', function(req, res){
-  db.getItinerary(req.body.name, function(err, results){
+app.post('/itinerary', function(req, res){
+  db.getItinerary(JSON.stringify(req.body.name), function(err, results){
+    if(err){console.log('Get Itinerary Error!: ', err)}
     res.send(results);
   })
 })
 
 app.post('/votes', function(req, res){
-  console.log('req.body.name: ',req.body.name)
-  res.send("yeah")
+  db.saveVotes(JSON.stringify(req.body.name), JSON.stringify(req.body.title), JSON.stringify(req.body.image), function(err, results){
+    if(err){console.log('Save Votes Error!: ', err)}
+    res.send(results);
+  })
 })
 
 
