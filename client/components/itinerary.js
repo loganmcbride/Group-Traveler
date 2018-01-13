@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import ItineraryItem from './itineraryItem.js';
 
 class Itinerary extends React.Component {
   constructor(props){
@@ -16,8 +17,8 @@ class Itinerary extends React.Component {
   getIdeas(name){
     axios.post('/itinerary', this.state)
     .then((response) => {
-      console.log('this is /ideas response :', response);
-      this.setState({ideas: response})
+      console.log('this is /ideas response :', response.data);
+      this.setState({ideas: response.data})
     })
   }
 
@@ -39,6 +40,10 @@ class Itinerary extends React.Component {
           </input>
           <button onClick={this.nameSubmit} className="btn-dark btn-outline-success">Create</button>
         </form>
+        <p></p>
+        <div>
+        {this.state.ideas.map((idea, i) => <ItineraryItem idea={idea} key={i}/>)}
+        </div>
       </div>
     )
   }
