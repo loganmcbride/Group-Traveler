@@ -9,14 +9,12 @@ class IdeaItem extends React.Component {
   }
 
   postVotes(){
-    console.log('WANG: ', this.props.idea.title)
     axios.post('/votes', {
       title: this.props.idea.title,
       image: this.props.idea.main_image,
       name: this.props.name
     })
     .then((response) => {
-      console.log('successful db save!')
     })
   }
 

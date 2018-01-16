@@ -21,7 +21,6 @@ class Ideas extends React.Component {
   getIdeas(){
     axios.post('/ideas', this.state)
     .then((response) => {
-      console.log('success!!', response);
       this.setState({ideas: response.data.points_of_interest})
     });
   }

@@ -17,7 +17,6 @@ class Itinerary extends React.Component {
   getIdeas(name){
     axios.post('/itinerary', this.state)
     .then((response) => {
-      console.log('this is /ideas response :', response.data);
       this.setState({ideas: response.data})
     })
   }
